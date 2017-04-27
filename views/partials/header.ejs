@@ -22,6 +22,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<% include ../master.css %>
+	<style>
+	html, body, #main-container {
+		background-image: url('https://s-media-cache-ak0.pinimg.com/236x/9e/9d/d9/9e9dd98e9f2d822ad6e8bf315d45d610.jpg');
+		background-attachment: fixed;
+	}
+	html, body {
+		padding-top: 40px;
+	}
+	#main-container {
+		padding: 50px;
+	}
+	</style>
 </head>
 
 <!-- Body -->
@@ -30,7 +42,7 @@
     <!-- Header -->
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -46,8 +58,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="/types">Types of Nuclear Bombs</a></li>
-                <li><a href="/materials">The Materials Used in Nukes</a></li>
+                <li><a href="/types">Background Info</a></li>
+                <li><a href="/materials">Chemistry of Nukes</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="/bibliography">Bibliography</a></li>

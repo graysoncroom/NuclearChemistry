@@ -1,9 +1,10 @@
 <% include partials/header.ejs %>
 
-	<div class="jumbotron">
+	<div class="jumbotron" id="title-container">
 		<div class="container">
     		<h2 class="display-3 center" id="title">The Chemistry Behind Nuclear Warfare</h2>
     		<p class="lead center">Learn the chemical reasons for the massive amounts of damage they cause, the different types, and the chemical components that used in nuclear warfare.</p>
+			<iframe style="display:block;margin: 0 auto;" width="560" height="315" src="https://www.youtube.com/embed/XnrLY-phipw" frameborder="0" allowfullscreen></iframe>
     	</div>
     </div>
 
@@ -13,37 +14,26 @@
 			<h3 class="display-3 center">R4</h3>
 		</div>
 	<% include partials/e_bubble.ejs %>
-    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
 	$("#title-container")
 		.mouseenter(function() {
 			$(this).addClass('animated wobble')
-			    $(this).css("color", "orange");
-			           $("body").css("background-color", "green")
-			$("#main-container").css("background-color", "green")
+			$(this).css("color", "blue");
 		})
 		.mouseleave(function() {
 			$(this).removeClass('animated wobble')
 			$(this).css("color", "black");
-		
-			           $("body").css("background-color", bodycolor)
-			$("#main-container").css("background-color", containercolor)
-			
 		})
-	var bodycolor = $("body").css("backgroundColor");
 	var containercolor = $("#main-container").css("background-color");
 	$("#name-container")
 		.mouseenter(function() {
-			$(this).addClass("animated flash")
-			$(this).css("color", "yellow");
-			$("body").css("background-color", "blue")
-			$("#main-container").css("background-color", "blue")
+			$(this).addClass("animated jello")
+			$(this).css("color", "green");
 		})
 		.mouseleave(function() {
-			$(this).removeClass("animated flash")
+			$(this).removeClass("animated jello")
 			$(this).css("color", "black");
-			$("body").css("background-color", bodycolor)
-			$("#main-container").css("background-color", containercolor);
 		})
-</script>
+	</script>
 <% include partials/footer.ejs %>
