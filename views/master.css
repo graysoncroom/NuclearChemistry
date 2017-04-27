@@ -3,6 +3,14 @@
     text-align: center;
 }
 
+.ocenter {
+	margin: 0 auto;
+}
+
+h2 {
+	font-size: 40px;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -16,5 +24,9 @@ html, body {
 .jumbotron {
     background-color: whitesmoke;
     padding-bottom: 50px;
+}
+
+ul.big {
+	font-size: 20px;
 }
 </style>

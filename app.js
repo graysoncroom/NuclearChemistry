@@ -15,12 +15,12 @@ app.get('/:page', (req, res) => {
 
 	var pageRequest  = req.params.page.toLowerCase(),
 	    validRequest = false;
-	
-	pageArray.forEach(e => { 
+
+	pageArray.forEach(e => {
 		if(e === pageRequest) {
 			validRequest = true;
 		}
-	}
+	});
 	
 	res.render(validRequest ? pageRequest : 'error');
 });

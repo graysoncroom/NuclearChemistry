@@ -1,7 +1,59 @@
 <% include partials/header.ejs %>
 
-<h1 id="title">About This Site</h1>
+	<% include partials/s_bubble.ejs %>
+		<h2 class="display-3 center" id="title">How This Site Was Made</h2>
+	<% include partials/e_bubble.ejs %>
+
+	<% include partials/s_bubble.ejs %>
+		<h2 class="display-3 center">Components</h2>
+		<ul class="big">
+			<li>Node.js Backend</li>
+			<li>CentOS Linux Server</li>
+			<li>Bootstrap 3</li>
+			<li>jQuery (for dom interaction)</li>
+		</ul>
+	<% include partials/e_bubble.ejs %>
 	
+	<% include partials/s_bubble.ejs %>
+		<h2 class="display-3 center code">Node Server Source Code</h2>
+		<pre><code>
+			const bodyParser = require('body-parser'),
+         	 	 	 express = require('express'),
+             	 	 	 app = express();
+
+			app.use(bodyParser.urlencoded({extended: true}));
+			app.set('view engine', 'ejs');
+
+			const pageArray = ['types', 'bibliography', 'materials', 'about'];
+
+			app.get('/', (req, res) => {
+				res.render('index');
+			});
+
+			app.get('/:page', (req, res) => {
+
+				var pageRequest  = req.params.page.toLowerCase(),
+	    			validRequest = false;
+				
+				pageArray.forEach(e => {
+					if(e === pageRequest) {
+						validRequest = true;
+					}
+				});
+				
+				res.render(validRequest ? pageRequest : 'error');
+			});
 
 
+			app.listen(8080, 'localhost', () => {
+				console.log('The server has started on ' + 'localhost' + ':' + 8080);
+			});
+		</code></pre>
+	<% include partials/e_bubble.ejs %>
+
+	<% include partials/s_bubble.ejs %>
+		<h2 class="center">More Code!</h2>
+		<p class="center">Feel free to steal, contribute, or look at the project's source code</p>
+		<p class="center">My code is licensed under <a href="http://www.unlicense.org">The Unlicense</a>. Death to those who use closed source software!</p>
+		<p class="center">The git repository is hosted on my <a href="https://www.github.com/graysoncroom/NuclearChemistry">Github</a>.</p>
 <% include partials/footer.ejs %>
